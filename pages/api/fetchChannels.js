@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     const apiUrl = 'https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels';
 
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch('https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels'); {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
