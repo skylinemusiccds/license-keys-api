@@ -1,23 +1,23 @@
 import fetch from 'cross-fetch';
 
-// Fetch channel details from the first API
+// Fetch channel details from the provided API
 const fetchChannelDetails = async () => {
     try {
-        const response = await fetch('https://tplayapi.code-crafters.app/321codecrafters/fetcher.json');
+        const response = await fetch('https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels');
         const data = await response.json();
-        return data.data.channels.flat(); // Flatten channels array
+        return data.channels ? data.channels : []; // Adjust according to the actual response structure
     } catch (error) {
         console.error('Error fetching channel details:', error);
         return [];
     }
 };
 
-// Fetch license keys from your API
-const fetchLicenseKeys = async () => {
+// Fetch dynamic license keys from your API
+const fetchDynamicLicenseKeys = async () => {
     try {
-        const response = await fetch('https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels');
+        const response = await fetch('https://license-keys-api.vercel.app/api/license-keys');
         const data = await response.json();
-        return data; // Example: { "channel1_id": "key1", "channel2_id": "key2", ... }
+        return data; // Example: { "channel1_id": { "keys": [...], "type": "temporary" }, ... }
     } catch (error) {
         console.error('Error fetching license keys:', error);
         return {};
@@ -28,16 +28,15 @@ const fetchLicenseKeys = async () => {
 export default async function handler(req, res) {
     try {
         const channels = await fetchChannelDetails();
-        const licenseKeys = await fetchLicenseKeys();
+        const licenseKeys = await fetchDynamicLicenseKeys();
 
-        const enrichedChannels = channels.map(channel => ({
-            ...channel,
-            license_key: licenseKeys[channel.id] || null // Add the license key
-        }));
+        // Extract channel ID from query parameters
+        const channelId = req.query.id; // Example: id=channel1_id
 
-        res.status(200).json({ list: enrichedChannels });
-    } catch (error) {
-        console.error('Error processing request:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-}
+        if (!channelId) {
+            return res.status(400).json({ error: 'Channel ID is required' });
+        }
+
+        // Find the specific channel by ID
+        const channel = channel
+        
