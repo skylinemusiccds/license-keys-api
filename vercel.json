@@ -1,15 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "pages/api/fetchChannels.js",
-      "use": "@vercel/node"
+  "build": {
+    "env": {
+      "API_URL": "https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/fetchChannels",
-      "dest": "/pages/api/fetchChannels.js"
-    }
-  ]
+  }
 }
