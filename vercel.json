@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "pages/api/fetchChannels.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/fetchChannels",
+      "dest": "/pages/api/fetchChannels.js"
+    }
+  ]
+}
