@@ -1,23 +1,14 @@
 {
-  "name": "nextjs-m3u-api",
+  "name": "m3u-generator",
   "version": "1.0.0",
-  "description": "A Next.js project to serve M3U playlists via API",
-  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "^13.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.0.0",
-    "eslint-config-next": "^13.0.0"
-  },
-  "engines": {
-    "node": ">=14.x"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
