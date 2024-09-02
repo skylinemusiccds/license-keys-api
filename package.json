@@ -1,6 +1,7 @@
 {
-  "name": "license-keys-api",
+  "name": "nextjs-m3u-api",
   "version": "1.0.0",
+  "description": "A Next.js project to serve M3U playlists via API",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -8,9 +9,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^12.0.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "cross-fetch": "^3.0.0"
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=14.x"
   }
 }
