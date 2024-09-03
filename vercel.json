@@ -1,7 +1,7 @@
 {
   "functions": {
-    "key.php": {
-      "runtime": "vercel-php@0.3.0"
+    "pages/api/key.js": {
+      "runtime": "nodejs14.x"
     }
   }
 }
