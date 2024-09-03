@@ -1,7 +1,7 @@
 {
-  "build": {
-    "env": {
-      "API_URL": "https://babel-in.xyz/babel-b2ef9ad8f0d432962d47009b24dee465/tata/channels"
+  "functions": {
+    "key.php": {
+      "runtime": "vercel-php@0.3.0"
     }
   }
 }
