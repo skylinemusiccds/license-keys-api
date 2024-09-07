@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "pages/api/key.js": {
-      "runtime": "nodejs14.x"
-    }
-  }
-}
