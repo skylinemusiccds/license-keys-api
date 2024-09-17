@@ -16,8 +16,7 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTime) {
 
 $json = fetchMPDManifest($api, $userAgent, $userIP);
 $data = json_decode($json, true);
-$keyPart = $data['live_keys'];
-$keyPart = $data['old_keys'];
+$keyPart = array_merge($data['live_keys'] ?? [], $data['old_keys'] ?? []);
 $keys = json_encode($keyPart, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
 header('Content-Type: application/json');
